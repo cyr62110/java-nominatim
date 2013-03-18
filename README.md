@@ -20,6 +20,20 @@ You must use another librairy to do the job :
 
 ##Usages
 
+###Search
+
+Example 1 :  http://nominatim.openstreetmap.org/search?q=135+pilkington+avenue,+birmingham&format=xml&polygon=1&addressdetails=1
+```java
+String url = (new NominatimQueryBuilder(Format.XML)).query("135 pilkington avenur, birmingham")
+                  .polygon(true)
+                  .addressdetails(true)
+                  .build();
+```
+
+###Reverse
+
+Reverse geocoding is not supported by this version. May be added later.
+
 ##License
 
 This library is covered by Apache v2.
