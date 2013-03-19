@@ -18,13 +18,18 @@ You must use another librairy to do the job :
 + Apache HttpComponents : Android, etc...
 + URLFetcher : Google AppEngine
 
-##Usages
+##Parsing
+
+##Building query
 
 ###Search
 
-Example 1 :  http://nominatim.openstreetmap.org/search?q=135+pilkington+avenue,+birmingham&format=xml&polygon=1&addressdetails=1
+To dynamically create query to Nominatim, you must use NominatimQueryBuilder.
+This class is just a basic wrapper so you should read official wiki : The name of the parameter will give you the method to call.
+
+Example :  http://nominatim.openstreetmap.org/search?q=135+pilkington+avenue,+birmingham&format=xml&polygon=1&addressdetails=1
 ```java
-String url = (new NominatimQueryBuilder(Format.XML)).query("135 pilkington avenur, birmingham")
+String url = (new NominatimQueryBuilder(Format.XML)).query("135 pilkington avenue, birmingham")
                   .polygon(true)
                   .addressdetails(true)
                   .build();
