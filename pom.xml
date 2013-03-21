@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>fr.cvlaminck</groupId>
   <artifactId>nominatimJavaSupport</artifactId>
-  <version>1.0.001i</version>
+  <version>1.0.003i</version>
   <name>nominatimJavaSupport</name>
   <build>
     <sourceDirectory>src</sourceDirectory>
