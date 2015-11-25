@@ -1,0 +1,55 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+apply plugin: 'com.jfrog.bintray'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+version = '0.5'
+
+dependencies {
+    compile 'org.json:json:20141113'
+    compile 'commons-io:commons-io:2.4'
+    compile 'fr.cvlaminck:java-uri-builder:1.2'
+
+    testCompile 'junit:junit:4.10'
+}
+
+repositories {
+    jcenter()
+    maven {
+        url 'https://dl.bintray.com/cyr62110/maven/'
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+            groupId 'fr.cvlaminck'
+            artifactId 'java-nominatim'
+        }
+    }
+}
+
+bintray {
+    user = System.getProperty('bintray.user')
+    key = System.getProperty('bintray.key')
+    publications = ['maven']
+    pkg {
+        repo = 'maven'
+        name = 'java-nominatim'
+        version {
+            name = project.version
+        }
+    }
+}

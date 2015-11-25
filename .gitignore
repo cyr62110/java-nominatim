@@ -1,6 +1,7 @@
-.project
-.classpath
-.settings
-*.class
-target
-bin
+#Gradle
+/build
+/\.gradle
+
+#Idea
+*.iml
+/\.idea

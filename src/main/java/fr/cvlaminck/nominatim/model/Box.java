@@ -14,23 +14,11 @@
  * limitations under the License.
  */
 
-package fr.cvlaminck.nominatim.query;
+package fr.cvlaminck.nominatim.model;
 
-public enum Format {
-	HTML("html"),
-	JSON("json"),
-	XML("xml");
-	
-	private String m_format = null;
-	Format(String f)
-	{
-		m_format = f;
-	}
-	
-	@Override
-	public String toString()
-	{
-		return m_format;
-	}
-	
+public class Box {
+    public double left;
+    public double top;
+    public double right;
+    public double bottom;
 }
